@@ -121,7 +121,7 @@ export class App {
       console.log(this.#workouts);
     }
     //SAVE IN LOCAL STORAGE, not implemented yet
-    // this._saveLocalStorage();
+    this._saveLocalStorage();
 
     //render workout on map as market
     this.renderMarker(workout);
@@ -298,7 +298,6 @@ export class App {
             );
           });
           setTimeout(() => {
-            console.log('final timeout lejano');
             const c = this.#map.getCenter();
             const coView = [c.lat, c.lng];
             if (
@@ -325,7 +324,6 @@ export class App {
           });
           // }
           setTimeout(() => {
-            console.log('dentro timeout distancia pequeña');
             this.#map.setView(coords, 11, {
               animate: true,
               pan: {
@@ -361,10 +359,10 @@ export class App {
     console.log(dist);
     return dist;
   }
-  /* FALTA TERMINAR, NO FUNCIONA BIEN EL LOCAL STORAGE, PUEDE QUE SEA PORQUE SE CARGA LA HERENCIA.
+  // FALTA TERMINAR, NO FUNCIONA BIEN EL LOCAL STORAGE, PUEDE QUE SEA PORQUE SE CARGA LA HERENCIA.
   _saveLocalStorage() {
-    localStorage.setItem('workouts', JSON.stringify(this.#workouts));
+    localStorage.setItem('test', JSON.stringify(this.#workouts));
 
-    console.log(this.#workouts);
-  }*/
+    console.log(JSON.stringify(this.#workouts));
+  }
 }
